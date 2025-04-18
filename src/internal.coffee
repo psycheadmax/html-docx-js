@@ -26,8 +26,16 @@ module.exports =
       gutter: 0
     ,
       switch documentOptions.orientation
-        when 'landscape' then height: 12240, width: 15840, orient: 'landscape'
-        else width: 12240, height: 15840, orient: 'portrait'
+        when 'landscape' then 
+          pageSize:
+            height: documentOptions.pageSize?.height ? 11906
+            width: documentOptions.pageSize?.width ? 16838
+          orient: 'landscape'
+        else 
+          pageSize:
+            width: documentOptions.pageSize?.width ? 11906
+            height: documentOptions.pageSize?.height ? 16838
+          orient: 'portrait'
     ,
       margins: documentOptions.margins
 
