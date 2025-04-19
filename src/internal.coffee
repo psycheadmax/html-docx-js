@@ -27,14 +27,12 @@ module.exports =
     ,
       switch documentOptions.orientation
         when 'landscape' then 
-          pageSize:
-            height: documentOptions.pageSize?.height ? 11906
-            width: documentOptions.pageSize?.width ? 16838
+          height: documentOptions.height ? 11906
+          width: documentOptions.width ? 16838
           orient: 'landscape'
         else 
-          pageSize:
-            width: documentOptions.pageSize?.width ? 11906
-            height: documentOptions.pageSize?.height ? 16838
+          width: documentOptions.width ? 11906
+          height: documentOptions.height ? 16838
           orient: 'portrait'
     ,
       margins: documentOptions.margins
