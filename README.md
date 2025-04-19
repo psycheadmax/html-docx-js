@@ -48,9 +48,8 @@ containing the output file.
 `asBlob` can take additional options for controlling page setup for the document:
 
 * `orientation`: `landscape` or `portrait` (default)
-* `pageSize`: map of page dimensions (expressed in twentieths of point):
-    - `width`: number (default: 11906 for portrait, 16838 for landscape)
-    - `height`: number (default: 16838 for portrait, 11906 for landscape)
+* `width`: number (default: 11906 for portrait, 16838 for landscape)
+* `height`: number (default: 16838 for portrait, 11906 for landscape)
 * `margins`: map of margin sizes (expressed in twentieths of point, see
   [WordprocessingML documentation](http://officeopenxml.com/WPsectionPgMar.php) for details):
     - `top`: number (default: 1440, i.e. 2.54 cm)
@@ -65,10 +64,8 @@ For example:
 
     var converted = htmlDocx.asBlob(content, {
       orientation: 'landscape',
-      pageSize: {
-        width: 15000,
-        height: 20000
-      },
+      width: 15000,
+      height: 20000,
       margins: {top: 720}
     });
     saveAs(converted, 'test.docx');
